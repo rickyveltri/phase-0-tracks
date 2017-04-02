@@ -15,7 +15,7 @@ Branching allows one (or multiple people) to work on different features or explo
 
 * What is a commit? What makes a good commit message?
 
-A commit creates a version of the file(s), which can be accessed at a later time.  Committing is essentially like saving a version that you can go back to, should you run into any issues in the future.  Committing often is a good practice.
+A commit creates a version of the file(s), which can be accessed at a later time.  Committing is essentially like saving a version that you can go back to, should you run into any issues in the future.  A good commit message is short and to the point of the changes made.  Committing often is a good practice.
 
 
 * What is a merge conflict?
