@@ -21,3 +21,6 @@ A commit creates a version of the file(s), which can be accessed at a later time
 * What is a merge conflict?
 
 Merge conflicts can occur when changes are made to the same line of code, or if a file that someone is trying to edit is deleted.  To resolve merge conflicts, changes from different branches can be reincorporated in a new commit.
+
+
+Ricky
