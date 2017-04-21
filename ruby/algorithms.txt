@@ -1,3 +1,5 @@
+ELEVATOR:
+
 - If someone is approaching the elevator from outside, hit "door open"
 - Ask users for floor numbers and retain as an array; sort
 - set n = array[0]
@@ -15,3 +17,16 @@
 07 08 09
 04 05 06
 01 02 03
+
+
+DETERMINE OUTFIT FOR THE DAY (In SF)
+- Randomly assign underwear and socks, since there is little variation
+- Add jeans
+- Obtain temperature data for the next 12 hours in local area
+- if rain expected, set umbrella = 1;
+- If temp <= 60F...
+ - add rand(long sleeve shirt)
+ - add jacket
+- if temp >60F...
+  - add rand(short sleeve shirt)
+- if umbrella = 1, grab it on the way out
