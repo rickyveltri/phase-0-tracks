@@ -1,0 +1,32 @@
+ELEVATOR:
+
+- If someone is approaching the elevator from outside, hit "door open"
+- Ask users for floor numbers and retain as an array; sort
+- set n = array[0]
+- set x = n / 3
+- Assuming the elevator has 3 buttons per row, starts with 1-2-3, then 4-5-6, etc), and our robot's "finger" is hovering over 1...
+  - if n = 1, press inward
+  - if n = 2, move right by one and press
+  - if n % 3 = 0, move right by 2
+    - where n = 3x, move up by x-1 and press
+    [Spending a lot of time here, so going to move along.  Insert additional logic, including a "save point" for the machine's "finger" to base additional moves off of.]
+- iterate up by one, setting n = array[1]
+- repeat until end of array is reached
+
+10 11 12
+07 08 09
+04 05 06
+01 02 03
+
+
+DETERMINE OUTFIT FOR THE DAY (In SF)
+- Randomly assign underwear and socks, since there is little variation
+- Add jeans
+- Obtain temperature data for the next 12 hours in local area
+- if rain expected, set umbrella = 1;
+- If temp <= 60F...
+ - add rand(long sleeve shirt)
+ - add jacket
+- if temp >60F...
+  - add rand(short sleeve shirt)
+- if umbrella = 1, grab it on the way out
