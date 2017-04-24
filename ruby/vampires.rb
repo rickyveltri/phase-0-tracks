@@ -56,3 +56,6 @@ while counter < num_employees
 
   counter += 1
 end
+
+#Release 5: plot twist
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
