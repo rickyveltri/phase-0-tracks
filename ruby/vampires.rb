@@ -44,5 +44,15 @@ while counter < num_employees
     puts 'Results inconclusive'
   end
 
+  #Allergy survey
+  puts 'Do you have any allergies?  Type "done" once complete'
+  allergies = ''
+  until allergies == 'done' || allergies == 'sunshine'
+  allergies = gets.chomp
+    if allergies == 'sunshine'
+      puts 'Probably a vampire.'
+    end
+  end
+
   counter += 1
 end
