@@ -1,47 +1,59 @@
-# Required: Client's...
-#name, age, number of children, decor theme, and so on
-# mixed data: string, integer, and boolean
-puts "Ricky's Interior Design:  Client List"
+puts "RICKY'S INTERIOR DESIGN"
+
+##### ###  DATA STRUCTURES  ### #####
+
+  clients = []
+  client_info = {}
 
 
+##### ###  CLIENT DATA INPUT  ### #####
 
-clients = []
+  puts "First name:"
+  client_info[:name_first] = gets.chomp.to_s
 
-client_info = {
-  name:  "",
-  email:  "",
-  kids:  false,
-  themes:  "nil",
-  rooms:  0,
-}
+  puts "Last name:"
+  client_info[:name_last] = gets.chomp.to_s
 
-#logic
-puts "Name":
-client_info[:name] = gets.chomp.to_s
+  puts "Email address:"
+  client_info[:email] = gets.chomp.to_s
 
-puts "Email address":
-client_info[:email] = gets.chomp.to_s
+  puts "Number of children:"
+  client_info[:children] = gets.chomp.to_i
 
-puts "Do you have children? (0 for no, 1 for yes)":
-client_info[:kids] = gets.chomp.to_
+  puts "Number of rooms to design:"
+  client_info[:rooms] = gets.chomp.to_i
 
 
+##### ###  CONFIRM DATA  ### #####
+  puts client_info
+  puts "Review the client data above. Type in a field name to modify, or 'done' to complete"
+  field_to_update = gets.chomp.to_s
+  if field_to_update == 'done'
+  else
+    field_to_update.to_sym
+    puts "Change #{field_to_update} to:"
+    new_field_value = gets.chomp
+    client_info[field_to_update.to_sym] = new_field_value
+  end
 
-puts "Save client info? (Y/N)"
-answer = gets.chomp
-if answer.upcase == "Y" || answer.upcase == "YES"
-  clients.push(client_info)
-  elsif
-  answer.upcase == "N" || answer.upcase == "NO"
-  break
-else
-  puts "Enter 'Y' or 'N'"
-end
+  # prompt: save
+  puts "Save client to client list? (Y/N)"
+  save_input = gets.chomp.to_s
 
 
-#ux prompt user for info
+##### ###  PUSH TO CLIENT LIST  ### #####
+  save = true
 
-#convert user data to proper data type
+  if save_input.downcase == "y" || save_input.downcase == "yes"
+    save = true
+  else
+    save = false
+  end
+
+  if save
+    clients.push(client_info)
+  end
 
 
-#print hash after questions
+##### ###  PRINT CLIENT LIST  ### #####
+puts clients
