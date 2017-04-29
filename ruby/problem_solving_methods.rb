@@ -1,3 +1,5 @@
+##### ##  RELEASE 0: Implement a Simple Search  ## #####
+
 arr = [42, 89, 23, 1]
 
 def search_array (array, integer)
@@ -14,5 +16,28 @@ def search_array (array, integer)
 end
 
 
+##### ##  RELEASE 1: Calculate Fibonacci Numbers  ## #####
 
 
+def fib(length)
+  array = [0, 1]
+  i = 1
+  # account for edge cases [length <= 2]
+  if length == 0
+    array = []
+  elsif length == 1
+    array = [0]
+  elsif length == 2
+    array
+  else
+    while i < length - 1
+      #take array[i] + array[i-1], then push it to array
+      array.push(array[i] + array[i-1])
+      i += 1
+    end
+    array
+  end
+end
+
+# Test the 100th number
+p fib(100)[99] == 218922995834555169026 # the 99th index position should store the 100th number.  Therefore, this returns 'true'
