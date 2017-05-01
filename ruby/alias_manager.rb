@@ -80,9 +80,24 @@ def create_alias(full_name)
   end
 
   #reformat: upcase first letter
-  new_name.split.map(&:capitalize).join(' ')  #reformat, upcase first letter
+  new_name = new_name.split.map(&:capitalize).join(' ')  #reformat, upcase first letter
 end
 
 
-### #  Test  # ###
-p create_alias('Ricky Veltri')
+
+
+##### ##  RELEASE 1:  UX   /  RELEASE 2: Store Aliases ## #####
+
+puts "ALIAS CREATION TOOL"
+puts "Enter name(s), or type 'quit':"
+user_input = gets.chomp.to_s
+alias_list =[]
+
+while user_input != 'quit'
+  p user_alias = create_alias(user_input)
+  alias_list.push("#{user_alias} is actually #{user_input}")
+  user_input = gets.chomp.to_s
+end
+
+puts alias_list
+
