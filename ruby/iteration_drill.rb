@@ -5,21 +5,54 @@ zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
 
 # 1. Iterate through the zombie_apocalypse_supplies array,
 # printing each item in the array separated by an asterisk
-# ----
+zombie_apocalypse_supplies.each {|x| print x, "*"}
 
 # 2. In order to keep yourself organized, sort your zombie_apocalypse_supplies
 # in alphabetical order. Do not use any special built-in methods.
-# ----
+new_array = []
+new_array.push(
+  zombie_apocalypse_supplies[7],
+  zombie_apocalypse_supplies[3],
+  zombie_apocalypse_supplies[6],
+  zombie_apocalypse_supplies[5],
+  zombie_apocalypse_supplies[0],
+  zombie_apocalypse_supplies[1],
+  zombie_apocalypse_supplies[4],
+  zombie_apocalypse_supplies[2]
+  )
+puts new_array
 
 # 3. Create a method to see if a particular item (string) is in the
 # zombie_apocalypse_supplies. Do not use any special built-in methods.
 # For instance: are boots in your list of supplies?
-# ----
+def item_check (array, string)
+  item_in_list = false
+  i = 0
+  while i < array.length
+    if array[i] == string
+      item_in_list = true
+      break
+    else
+      i += 1
+    end
+  end
+  item_in_list
+end
+
+p item_check(zombie_apocalypse_supplies, 'compass')
+
 
 # 4. You can't carry too many things, you've only got room in your pack for 5.
 # Remove items in your zombie_apocalypse_supplies in any way you'd like,
 # leaving only 5. Do not use any special built-in methods.
-# ----
+mini_pack = []
+i = 0
+while i < 5
+  mini_pack[i] = zombie_apocalypse_supplies[i]
+  i += 1
+end
+p mini_pack
+
 
 # 5. You found another survivor! This means you can combine your supplies.
 # Create a new combined supplies list out of your zombie_apocalypse_supplies
@@ -28,7 +61,10 @@ zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
 # documentation for Arrays.
 other_survivor_supplies = [ "warm clothes", "rations", "compass", "camp stove",
                             "solar battery", "flashlight"]
-# ----
+
+combined_supply_list = []
+p combined_supply_list.push(zombie_apocalypse_supplies, other_survivor_supplies).flatten.uniq!
+
 
 # Hash Drills
 
