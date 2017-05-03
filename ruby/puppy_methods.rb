@@ -1,4 +1,11 @@
+#####  Release 0 + 1 #####
+
+
 class Puppy
+
+  def initialize
+    puts "Initializing new puppy instance ..."
+  end
 
   def fetch(toy)
     puts "I brought back the #{toy}!"
@@ -42,4 +49,61 @@ rosco.play_dead
 
 
 
+#####  Release 2  #####
+
+#create new class
+class Gymnast
+
+  def initialize
+    puts "Initializing gymnast..."
+  end
+
+  def flip(integer)
+    puts "Run across the board at full speed, flipping #{integer} times."
+  end
+
+  def jump
+    puts "Bend knees, push off the ground and jump!"
+  end
+
+end
+
+# create two instances of Gymnast
+kala = Gymnast.new
+ricky = Gymnast.new
+
+
+
+# #create gymnast array, numbered 1-50
+# gymnasts = [*1..50]
+
+# #iterate through array, assigning each to the Gymnast class
+# gymnasts.map! do |x|
+#   i = x.to_s
+
+#   # assign gymnast to class
+#   x = Gymnast.new
+
+#   #rename gymnast
+#   x = "Gymnast" + i
+
+# end
+
+
+
+
+# create array for gymnasts
+gymnasts_instances_array = []
+
+#create 50 instances of Gymnast
+50.times do
+  x = Gymnast.new
+  gymnasts_instances_array << x
+end
+
+# Iterate over data structure, performing the class methods on each
+gymnasts_instances_array.each do |x|
+  x.flip(3)
+  x.jump
+end
 
