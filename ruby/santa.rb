@@ -86,3 +86,40 @@ p santa_claus.gender = 'male'
 
 p santa_claus.age
 p santa_claus.ethnicity
+
+
+
+# Use our array of example genders and an array of example ethnicities (and feel free to add to it if you like -- each array could have a lot more options in it!) to create your Santas with a randomly selected gender and a randomly selected ethnicity. (How do you randomly select an array item? The Array documentation should be able to help you out there!)
+# Set your new Santa's age to a random number between 0 and 140.
+# No need to store your Santas in a data structure, but your program should print out the attributes of each Santa using the instance methods that give you access to that data.
+
+
+
+
+
+##### ### #  RELEASE 4 - Create many random Santas  # ### #####
+
+#define gender and ethnicity data structures from which we'll randomly pull during santa creation
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+
+
+# number of Santas to be created
+number_of_santas = 200
+
+#create data structure to house Santas
+santas = []
+
+number_of_santas.times do
+  #create random Santa and insert into 'santas' array
+  santas << Santa.new(
+    example_genders[rand(example_genders.length-1)],
+    example_ethnicities[rand(example_ethnicities.length-1)]
+    )
+end
+
+p santas.length
+
+
+
+
