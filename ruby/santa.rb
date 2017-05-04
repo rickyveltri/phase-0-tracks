@@ -2,7 +2,13 @@
 
 class Santa
 
-# Define initialize method
+  # refactor with attr_reader/accessor 'syntactic sugar'
+  attr_reader :age, :ethnicity
+  attr_accessor :gender
+
+
+
+  # Define initialize method
   def initialize(gender, ethnicity)
     @gender = gender
     @ethnicity = ethnicity
@@ -34,20 +40,20 @@ class Santa
     @reindeer_ranking.push(@reindeer_ranking.delete(reindeer_name))
   end
 
-  # reassign gender from outside of the class
-  def gender=(new_gender)
-    @gender = new_gender
-  end
+  # # reassign gender from outside of the class (setter method)
+  # def gender=(new_gender)
+  #   @gender = new_gender
+  # end
 
-  # get age (setter method)
-  def age
-    @age
-  end
+  # # get age (getter method)
+  # def age
+  #   @age
+  # end
 
-  # get ethnicity (setter method)
-  def ethnicity
-    @ethnicity
-  end
+  # # get ethnicity (getter method)
+  # def ethnicity
+  #   @ethnicity
+  # end
 
 end
 
@@ -80,28 +86,3 @@ p santa_claus.gender = 'male'
 
 p santa_claus.age
 p santa_claus.ethnicity
-
-
-
-
-
-
-
-##### ### #  RELEASE 2  # ### #####
-
-# Add three attribute-changing methods to your Santa class:
-
-# celebrate_birthday should age Santa by one year.
-# get_mad_at can take a reindeer's name as an argument, and move that reindeer in last place in the reindeer rankings. Vixen knows what he did.
-# The @gender attribute should have a setter method that allows @gender to be reassigned from outside the class definition.
-
-
-
-# Add two "getter" methods as well:
-
-# The method age should simply return @age.
-# The method ethnicity should return @ethnicity.
-# Update your driver code to test your work.
-
-
-# Add three attribute-changing methods to the Santa class:
