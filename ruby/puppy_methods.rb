@@ -71,7 +71,11 @@ end
 # create two instances of Gymnast
 kala = Gymnast.new
 ricky = Gymnast.new
-
+gymnasts =[]
+gymnasts[0] = kala
+gymnasts[1] = ricky
+puts gymnasts[0]
+puts kala
 
 
 # #create gymnast array, numbered 1-50
