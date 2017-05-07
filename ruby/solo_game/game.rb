@@ -1,3 +1,7 @@
+#####  ###  #  GAME:  WORDGUESS  #  ###  #####
+
+
+
 # One user can enter a word (or phrase, if you would like your game to support that), and another user attempts to guess the word.
 # Guesses are limited, and the number of guesses available is related to the length of the word.
 # Repeated guesses do not count against the user.
@@ -15,6 +19,8 @@ Class WordGuess
 
 
   *** methods ***
+
+  Convert word to lowercase
   convert word or phase to "_ _ _ _ _" format
 
   display "_ _ _ _ _"
@@ -39,6 +45,14 @@ Class WordGuess
 
   Determine loss
       taunt message
+
+
+
+Variables and data structures
+word
+word_letters
+player2_view_arr
+guessed_letters
 
 
 
