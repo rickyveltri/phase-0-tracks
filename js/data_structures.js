@@ -42,3 +42,18 @@ corolla.startEngine();
 
 console.log(mustang);
 yukon.startEngine();
+
+
+
+// loop through the keys and values of objects
+for (var k in mustang) {
+  console.log(k + ": " + mustang[k]);
+};
+
+for (var k in corolla) {
+  console.log(k + ": " + corolla[k]);
+};
+
+for (var k in yukon) {
+  console.log(k + ": " + yukon[k]);
+};
