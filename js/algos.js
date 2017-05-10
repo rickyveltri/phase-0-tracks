@@ -8,21 +8,50 @@ function findLongestString(stringArr) {
             longestString = stringArr[i];
         }
     }
-    return longestString
+    return longestString;
 }
-
-var strings = ['habitat', 'to', 'wood', 'strings', 'drums', 'guitar'];
-var phrases = ['first phrase', 'looooo0ooong phrase', 'shrt phrse'];
-
-// Driver Code Test
-console.log(findLongestString(strings));
-console.log(findLongestString(phrases));
-
 
 
 
 
 ///////////////  RELEASE 1  ///////////////
+
+// Function: determine if two object share the same key
+function objKeyMatch(obj1, obj2) {
+    matchingKeys = false;
+    for (var k in obj1) {
+        if (obj2[k] !== undefined) {
+            matchingKeys = true;
+        }
+    }
+    return matchingKeys;
+}
+
+
+
+
+
+///////////////  DRIVER CODE  ///////////////
+
+
+// Release 0 //
+var strings = ['habitat', 'to', 'wood', 'strings', 'drums', 'guitar'];
+var phrases = ['first phrase', 'looooo0ooong phrase', 'shrt phrse'];
+console.log(findLongestString(strings));
+console.log(findLongestString(phrases));
+
+
+// Release 1 //
+console.log(objKeyMatch({type: "Acoustic", wood: "Mahogoney"}, {name: "Tamir", age: 54}));
+        // returns false
+console.log(objKeyMatch({animal: "Dog", legs: 4}, {animal: "Dog", legs: 3}));
+        // return true
+
+
+
+
+
+
 
 // Class constructor
 function Guitar(type, wood, strings) {
