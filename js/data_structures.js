@@ -6,5 +6,12 @@ var names = ['Ed', 'Jae', 'Ricky', 'Four'];
 colors.push('Violet');
 names.push('Seabiscuit');
 
-console.log(colors);
-console.log(names);
+
+// create data structure, add horses and their colors
+var Horses = {};
+for (var i = 0; i < colors.length; i++) {
+    Horses[names[i]] = colors[i];
+};
+console.log(Horses);
+
+
