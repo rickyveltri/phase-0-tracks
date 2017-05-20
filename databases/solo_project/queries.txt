@@ -73,3 +73,52 @@ OUTPUT:
 6|Jennifer Lopez|TRUE|2
 8|Stevie Wonder|TRUE|3
 9|Bruno Mars|TRUE|3
+
+
+
+-----------------------------------------------------------
+RELEASE 3
+-----------------------------------------------------------
+
+COMMAND:
+SELECT labels.name, artists.name, touring  FROM artists LEFT JOIN labels ON artists.label_id = labels.id;
+
+OUTPUT:
+Warner Bros.|Red Hot Chili Peppers|TRUE
+Warner Bros.|Green Day|TRUE
+Epic|A Tribe Called Quest|TRUE
+Epic|Future|TRUE
+Epic|Jennifer Lopez|TRUE
+Motown|Stevie Wonder|TRUE
+Motown|Bruno Mars|TRUE
+
+-----------------------------------------------------------
+
+COMMAND:
+SELECT labels.name, artists.name, touring  FROM artists RIGHT JOIN labels ON artists.label_id = labels.id;
+
+OUTPUT:
+Error: RIGHT and FULL OUTER JOINs are not currently supported
+
+-----------------------------------------------------------
+
+COMMAND:
+SELECT labels.name, artists.name, touring  FROM artists INNER JOIN labels ON artists.label_id = labels.id;
+
+OUTPUT:
+Warner Bros.|Red Hot Chili Peppers|TRUE
+Warner Bros.|Green Day|TRUE
+Epic|A Tribe Called Quest|TRUE
+Epic|Future|TRUE
+Epic|Jennifer Lopez|TRUE
+Motown|Stevie Wonder|TRUE
+Motown|Bruno Mars|TRUE
+
+
+
+
+
+
+
+
+
