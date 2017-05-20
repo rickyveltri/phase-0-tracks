@@ -1,0 +1,124 @@
+COMMAND:
+SELECT * from artists
+
+OUTPUT:
+1|Red Hot Chili Peppers|TRUE|1
+2|Green Day|TRUE|1
+3|Goo Goo Dolls|FALSE|1
+4|A Tribe Called Quest|FALSE|2
+5|Future|TRUE|2
+6|Jennifer Lopez|TRUE|2
+7|Michael Jackson|FALSE|3
+8|Stevie Wonder|TRUE|3
+9|Bruno Mars|TRUE|3
+
+
+-----------------------------------------------------------
+
+
+COMMAND:
+UPDATE artists SET touring="TRUE" WHERE name="A Tribe Called Quest";
+
+OUTPUT:
+4|A Tribe Called Quest|TRUE|2
+
+
+-----------------------------------------------------------
+
+
+COMMAND:
+SELECT * FROM artists, labels WHERE artists.label_id = labels.id;
+
+OUTPUT:
+1|Red Hot Chili Peppers|TRUE|1|1|Warner Bros.
+2|Green Day|TRUE|1|1|Warner Bros.
+3|Goo Goo Dolls|FALSE|1|1|Warner Bros.
+4|A Tribe Called Quest|TRUE|2|2|Epic
+5|Future|TRUE|2|2|Epic
+6|Jennifer Lopez|TRUE|2|2|Epic
+7|Michael Jackson|FALSE|3|3|Motown
+8|Stevie Wonder|TRUE|3|3|Motown
+9|Bruno Mars|TRUE|3|3|Motown
+
+
+-----------------------------------------------------------
+
+
+COMMAND:
+SELECT artists.name, labels.name FROM artists JOIN labels on artists.label_id = labels.id;
+
+OUTPUT:
+Red Hot Chili Peppers|Warner Bros.
+Green Day|Warner Bros.
+Goo Goo Dolls|Warner Bros.
+A Tribe Called Quest|Epic
+Future|Epic
+Jennifer Lopez|Epic
+Michael Jackson|Motown
+Stevie Wonder|Motown
+Bruno Mars|Motown
+
+
+-----------------------------------------------------------
+
+
+COMMAND:
+DELETE FROM artists WHERE touring = "FALSE";
+
+OUTPUT:
+1|Red Hot Chili Peppers|TRUE|1
+2|Green Day|TRUE|1
+4|A Tribe Called Quest|TRUE|2
+5|Future|TRUE|2
+6|Jennifer Lopez|TRUE|2
+8|Stevie Wonder|TRUE|3
+9|Bruno Mars|TRUE|3
+
+
+
+-----------------------------------------------------------
+RELEASE 3
+-----------------------------------------------------------
+
+COMMAND:
+SELECT labels.name, artists.name, touring  FROM artists LEFT JOIN labels ON artists.label_id = labels.id;
+
+OUTPUT:
+Warner Bros.|Red Hot Chili Peppers|TRUE
+Warner Bros.|Green Day|TRUE
+Epic|A Tribe Called Quest|TRUE
+Epic|Future|TRUE
+Epic|Jennifer Lopez|TRUE
+Motown|Stevie Wonder|TRUE
+Motown|Bruno Mars|TRUE
+
+-----------------------------------------------------------
+
+COMMAND:
+SELECT labels.name, artists.name, touring  FROM artists RIGHT JOIN labels ON artists.label_id = labels.id;
+
+OUTPUT:
+Error: RIGHT and FULL OUTER JOINs are not currently supported
+
+-----------------------------------------------------------
+
+COMMAND:
+SELECT labels.name, artists.name, touring  FROM artists INNER JOIN labels ON artists.label_id = labels.id;
+
+OUTPUT:
+Warner Bros.|Red Hot Chili Peppers|TRUE
+Warner Bros.|Green Day|TRUE
+Epic|A Tribe Called Quest|TRUE
+Epic|Future|TRUE
+Epic|Jennifer Lopez|TRUE
+Motown|Stevie Wonder|TRUE
+Motown|Bruno Mars|TRUE
+
+
+
+
+
+
+
+
+
