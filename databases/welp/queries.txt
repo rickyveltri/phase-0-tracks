@@ -1,0 +1,38 @@
+Join three tables...
+
+COMMAND:
+SELECT * FROM reviews JOIN users ON reviews.user_id = users.id JOIN business ON reviews.business_id = business.id;
+
+OUTPUT:
+|5|Lotus Yoga- SO RELAXING!|4|1|1|Bradford|Pitt|4|Lotus Yoga
+|1|Amir ripped my car in two!|2|2|2|Mandy|Kaling|2|Amir's Towing
+|4|Helped me out of a pickle when a pickle got stuck in the drain|5|3|3|Angela|Jolie|5|Plumbing by Janet
+|1|Whale blubber on the menu?  I think they have an agreement to take Seaworld's leftovers|6|4|4|Steven|Wonder|6|Sushi World
+|3|As advertised, you're able to party with Beagles, but you're not allowed to pet them|3|5|5|Holly|Berry|3|The Beagle Nightclub
+|5|Grundy himself married us in the hole, which goes about 30ft underground.  100% will use Grundy's for my next marriage|1|6|6|Merryl|Streepman|1|Grundy Hollow Wedding Chapel
+--------------------------------------------------------
+
+
+Choose fields...
+
+COMMAND:
+SELECT users.first_name, users.last_name, business.name, reviews.stars, reviews.comment FROM reviews JOIN users ON reviews.user_id = users.id JOIN business
+
+OUTPUT:
+Bradford|Pitt|Lotus Yoga|5|Lotus Yoga- SO RELAXING!
+Mandy|Kaling|Amir's Towing|1|Amir ripped my car in two!
+Angela|Jolie|Plumbing by Janet|4|Helped me out of a pickle when a pickle got stuck in the drain
+Steven|Wonder|Sushi World|1|Whale blubber on the menu?  I think they have an agreement to take Seaworld's leftovers
+Holly|Berry|The Beagle Nightclub|3|As advertised, you're able to party with Beagles, but you're not allowed to pet them
+Merryl|Streepman|Grundy Hollow Wedding Chapel|5|Grundy himself married us in the hole, which goes about 30ft underground.  100% will use Grundy's for my next marriage
+Denzel|George|JoeBob's Sportz Barn|2|The equipment is nice, but the barn still has animals in it
+--------------------------------------------------------
+
+
+View data for one business...
+
+COMMAND:
+SELECT users.first_name, users.last_name, business.name, reviews.stars, reviews.comment FROM reviews JOIN users ON reviews.user_id = users.id JOIN business ON reviews.business_id = business.id WHERE business.id=1;
+
+OUTPUT:
+Merryl|Streepman|Grundy Hollow Wedding Chapel|5|Grundy himself married us in the hole, which goes about 30ft underground.  100% will use Grundy's for my next marriage
