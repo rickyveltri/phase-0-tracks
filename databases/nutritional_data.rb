@@ -1,3 +1,6 @@
+######  ###  #  NUTRITIONAL DATA  #  ###  ######
+
+##### ##  SQL SETUP  ## #####
 
 #Require gems
 require 'sqlite3'
@@ -42,7 +45,17 @@ create_fats_table_cmd = <<-SQL
 SQL
 
 
-#Driver code
+##### ##  DRIVER CODE  ## #####
+
+
+#Create tables
 db.execute(create_produce_table_cmd)
 db.execute(create_animals_table_cmd)
 db.execute(create_fats_table_cmd)
+
+
+
+#Retrieve table data
+vegetables = db.execute("SELECT * FROM vegetables")
+animals = db.execute("SELECT * FROM animals")
+fats = db.execute("SELECT * FROM fats")
