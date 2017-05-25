@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset = "UTF-8">
+    <title>Fun with jQuery</title>
+    <link rel="stylesheet" type="text/css" href="jquery_project.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>FUN WITH JQUERY!!!</h1>
+        <p>Let's make things dissapear, re-appear, fade in and out, change colors.. whatever we want</p>
+    </header>
+
+    <section class = "col_1">
+    <h2>Bingo!</h2>
+     Whoa... getting dizzy!
+     <ul>
+         <li id="uno">uno..</li>
+         <li id="dos">dos...</li>
+         <li id = "li_click">[click here]</li>
+         <li id = "li_poof">POOF! Gone without a tres</li>
+     </ul>
+    </section>
+
+    <section class = "col_2">
+    <h2>Heeeeere we GOOO!!!...</h2>
+         <iframe id="mario" src="https://giphy.com/embed/YTtqB2j5EN7IA" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
+
+</body>
+<script>
+    $(document).ready(function() {
+        $(".col_1").hide();
+        $(".col_1").slideDown(3000);
+        $(".col_1").css({
+            fontWeight: 'bold'
+        });
+        $('#li_poof').hide();
+        $('#li_click').css({
+            color: "blue"
+        });
+
+
+        $("#mario").hide().show(3000);
+
+        $("#li_click").on("click", function() {
+            $('#uno').hide();
+            $('#dos').hide();
+            $('#li_click').hide();
+            $('#li_poof').show();
+
+        });
+
+    });
+</script>
+</html>

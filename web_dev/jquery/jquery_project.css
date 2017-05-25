@@ -1,0 +1,33 @@
+body {
+  font-family: "Verdana";
+}
+
+h1 {
+  background-color: #8FBC8F;
+  color: #ffffff;
+  text-shadow: 2px black;
+  padding: 70px;
+  background-image: url("https://supermariorun.com/img/index/sec01_chara_mario.png");
+  background-size: 10%;
+  margin-bottom: 0;
+}
+
+header p {
+  background-color: #F0FFF0;
+  padding: 20px;
+  margin-top: 0;
+}
+
+.col_1 {
+  display: inline-block;
+  width: 49%;
+  float: right;
+  border: solid 2px black;
+
+}
+
+.col_2 {
+  display: inline-block;
+  width: 49%;
+  float: left;
+}
