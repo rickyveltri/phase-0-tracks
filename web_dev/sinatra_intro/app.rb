@@ -49,8 +49,14 @@ end
 
 ### RELEASE 0 ###
 # 1. write a '/contact' route that displays an address
+get '/contact' do
+  contact = params[:contact]
+  "Contact Address: #{contact}"
+end
 
 # 2. write a '/great_job' route that takes a person's name as a QUERY parameter and say "Good job, [person's name]!" If the parameter is not present, just say, "Good job!"
+
+
 
 # 3. A route that uses route parameters to add two numbers and respond with the result.  Note: think about data types
 
