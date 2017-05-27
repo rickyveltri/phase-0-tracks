@@ -48,6 +48,7 @@ end
 
 
 ### RELEASE 0 ###
+
 # 1. write a '/contact' route that displays an address
 get '/contact' do
   contact = params[:contact]
@@ -64,12 +65,13 @@ get '/great_job' do
   end
 end
 
-
-# 3. A route that uses route parameters to add two numbers and respond with the result.  Note: think about data types
-get 'add' do
+# 3. write a route that uses route parameters to add two numbers and respond with the result.  Note: think about data types
+get '/sum/:number_1/:number_2' do
   number_1 = params[:number_1]
   number_2 = params[:number_2]
-
+  sum = number_1.to_i + number_2.to_i
+  "Sum: #{sum}"
+end
 
 
 # 4.  OPTIONAL: Make a route that allows the user to search the database in some way
