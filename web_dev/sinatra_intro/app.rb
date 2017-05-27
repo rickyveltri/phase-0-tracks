@@ -55,10 +55,22 @@ get '/contact' do
 end
 
 # 2. write a '/great_job' route that takes a person's name as a QUERY parameter and say "Good job, [person's name]!" If the parameter is not present, just say, "Good job!"
-
+get '/great_job' do
+  name = params[:name]
+  if name
+    "Good job, #{name}!"
+  else
+    "Good job!"
+  end
+end
 
 
 # 3. A route that uses route parameters to add two numbers and respond with the result.  Note: think about data types
+get 'add' do
+  number_1 = params[:number_1]
+  number_2 = params[:number_2]
+
+
 
 # 4.  OPTIONAL: Make a route that allows the user to search the database in some way
 
